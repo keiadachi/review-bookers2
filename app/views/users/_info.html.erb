@@ -1,0 +1,32 @@
+<div class='container'>
+
+  <div class="row">
+    <div class="col-lg-2 pt-5 mx-5">
+      <h3>User info</h3>
+      <table>
+        <tr>
+          <td><%= attachment_image_tag(@user, :image, :fill, 100, 100, fallback: "noimage.jpg") %></td>
+        </tr>
+        <tr>
+          <th>name</th>
+          <td><%= @user.name %></td>
+        </tr>
+        <tr>
+          <th>introduction</th>
+          <td><%= @user.introduction %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3">
+      <%= link_to "編集", edit_user_path(@user), class: "btn btn-info btn-sm btn-block" %>
+    </div>
+  </div>
+
+
+
+
+
+</div>
