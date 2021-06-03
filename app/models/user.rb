@@ -6,5 +6,9 @@ class User < ApplicationRecord
 
 
   attachment :image, destroy: true
+  
+  
+  has_many :books
+
 
 end
