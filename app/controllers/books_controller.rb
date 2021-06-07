@@ -9,6 +9,7 @@ class BooksController < ApplicationController
   def index
     @user = current_user
     @book = Book.new
+    @books = Book.all
   end
 
   def show
@@ -39,15 +40,15 @@ class BooksController < ApplicationController
 
 
   private
-  def book_params
-    params.require(:book).permit(:title, :opinion, :user_id)
-  end
-
-  def ensure_correct_user
-    @book = Book.find(params[:id])
-    unless @book.user == current_user
-      redirect_to books_path
+    def book_params
+      params.require(:book).permit(:title, :opinion, :user_id)
     end
-  end
+
+    def ensure_correct_user
+      @book = Book.find(params[:id])
+      unless @book.user == current_user
+        redirect_to books_path
+      end
+    end
 
 end
