@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @book = Book.new
-    
+    @books = @user.books
   end
 
   def edit
@@ -21,5 +21,11 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :introduction, :image)
   end
 
+  def ensure_correct_user
+    @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to user_path(current_user)
+    end
+  end
 
 end
