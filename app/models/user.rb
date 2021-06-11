@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-  attachment :image, destroy: true
-  
-  
+  attachment :image
+
+
   has_many :books
 
 
