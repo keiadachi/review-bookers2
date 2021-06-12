@@ -1,15 +1,15 @@
       <h3>User info</h3>
       <table>
         <tr>
-          <%= attachment_image_tag @user, :image, format: 'jpeg', fallback: 'noimage.jpg', size:'100x100', class: "attachment user profile_image fallback"  %>
+          <%= attachment_image_tag @user, :image, format: 'jpeg', fallback: 'noimage.jpg', size:'50x50', class: "attachment user image fallback"  %>
         </tr>
         <tr>
           <th>name</th>
-          <td><%= user.name %></td>
+          <th><%= user.name %></th>
         </tr>
         <tr>
           <th>introduction</th>
-          <td><%= user.introduction %></td>
+          <th><%= user.introduction %></th>
         </tr>
       </table>
       <div>
